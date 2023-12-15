@@ -1,0 +1,37 @@
+<div class="p-3 container">
+  <div class="card">
+    <div class="card-title text-center rounded-bottom-5" style="background-color: #00008f;"><h3 class="p-lg-1 fw-bolder fs-4 text-light">Reservation list</h3></div>
+    <div class="card-body">
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name Client</th>
+          <th>CIN</th>
+          <th>Id Rom</th>
+          <th>Price</th>
+          <th>Date</th>
+          <th>Days</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let c of t_reservation">
+          <td>{{c.id}}</td>
+          <td>{{c.client.nom}} {{c.client.prenom}}</td>
+          <td>{{c.client.cin}}</td>
+          <td>{{c.chambre.nb_chambre}}</td>
+          <td>{{c.chambre.prix}}</td>
+          <td>{{c.date_debut}}</td>
+          <td>{{c.nbr_jours}}</td>
+          <td><button  class="btn btn-outline-info"><i class="bi bi-building-up"></i></button></td>
+          <td><button (click)="delete(c)" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button></td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

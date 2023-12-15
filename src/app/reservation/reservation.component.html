@@ -1,0 +1,48 @@
+<div class="p-3 container">
+  <div class="card">
+    <div class="card-title text-center   rounded-bottom-5" style="background-color: #00008f;"><h3 class="p-lg-1 fw-bolder fs-4 text-light">Reservation</h3></div>
+    <div class="card-body">
+      <div class="row">
+
+        <div class="col-md-6 ">
+          {{reservationForm.value | json}}
+          {{clientForm.value | json}}
+          <form [formGroup]="reservationForm" (ngSubmit)="savereservation()">
+            <form [formGroup]="clientForm" (ngSubmit)="savereservation()">
+            <div class="mb-3">
+              <label class="form-label">First Name</label>
+              <input class="form-control" formControlName="nom">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Last Name</label>
+              <input class="form-control" formControlName="prenom">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">CIN</label>
+              <input class="form-control" formControlName="cin">
+            </div>
+            </form>
+            <div class="mb-3">
+              <label class="form-label">Start date</label>
+              <input class="form-control" formControlName="date_debut">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">The number of days</label>
+              <input class="form-control" formControlName="nbr_jours">
+            </div>
+            <div class="mb-3">
+              <select class="form-select" formControlName="idChambre" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option *ngFor="let c of tn" [value]="c.nb_chambre">{{c.prix}}DH {{c.nb_person}}</option>
+              </select>
+            </div>
+            <button   class="btn btn-success">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

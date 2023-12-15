@@ -1,0 +1,56 @@
+<!-- reserved -->
+<div class="p-3 container ">
+  <div class="card">
+    <div class="card-title text-center rounded-bottom-5" style="background-color: #00008f;"><h3 class="p-lg-1 fw-bolder fs-4 text-light">Reserved</h3></div>
+    <div class="card-body">
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Number Rom</th>
+          <th>Price</th>
+          <th>Number Person</th>
+          <th>Reservation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let c of tr">
+          <td>{{c.nb_chambre}}</td>
+          <td>{{c.prix}}</td>
+          <td>{{c.nb_person}}</td>
+          <td>{{c.reserved}}</td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Not reserved -->
+<div class="p-3 container">
+  <div class="card">
+    <div class="card-title text-center rounded-bottom-5" style="background-color: #00008f;"><h3 class="p-lg-1 fw-bolder fs-4 text-light">Not Reserved</h3></div>
+    <div class="card-body">
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Number Rom</th>
+          <th>Price</th>
+          <th>Number Person</th>
+          <th>Reservation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let c of tn">
+          <td>{{c.nb_chambre}}</td>
+          <td>{{c.prix}}</td>
+          <td>{{c.nb_person}}</td>
+          <td>{{c.reserved}}</td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>
